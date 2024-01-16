@@ -1,14 +1,8 @@
-'''
-access_token = 'EAAPcBfyB4yEBOzK8THMWZBUmqW4QjusVnMd8AsBdRRlwVqQyOBBxVbumbj6pBg9Ek1tYMi911KRm2tlSQLjSqrsnnravnXHTJVrybbkJiCALojRMdExbkPuyx1Sqjt29HwtchCisq1ofZBrIRRVz25ZAj9QvGQqHUUYVqHeDNKdP51XXXAXCw0pwsBCS5l4ZAhIEchG5qwJEFZBPxADrKljg2vjz9BT6D8ncZD'
-ad_account_id = '3308140236145379'
-app_id = '1086343199449889'
-'''
-
 import requests
 
-ad_account_id = '3308140236145379'
-access_token = 'EAAPcBfyB4yEBOzK8THMWZBUmqW4QjusVnMd8AsBdRRlwVqQyOBBxVbumbj6pBg9Ek1tYMi911KRm2tlSQLjSqrsnnravnXHTJVrybbkJiCALojRMdExbkPuyx1Sqjt29HwtchCisq1ofZBrIRRVz25ZAj9QvGQqHUUYVqHeDNKdP51XXXAXCw0pwsBCS5l4ZAhIEchG5qwJEFZBPxADrKljg2vjz9BT6D8ncZD'
-app_id = '1086343199449889'
+ad_account_id = '00000000000'
+access_token = 'your_account_token_id'
+app_id = '0000000000000'
 
 fields = 'campaign_name,adset_name,ad_name,reach,impressions,frequency,spend,clicks,cpc,cpm,inline_link_click_ctr,purchase_roas'
 
