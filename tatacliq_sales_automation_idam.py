@@ -36,11 +36,11 @@ prefs = {"download.default_directory": download_path}
 chrome_options.add_experimental_option("prefs",prefs)
 
 #----------------connect to database--------------
-DB_HOST = 'database-1.cs7wneoxj0b8.us-east-1.rds.amazonaws.com'
-DB_USER = 'abdullah'
-DB_PASSWORD = 'Trailytics@789'
-DB_PORT = 3306
-DB_DATABASE = 'idam'
+DB_HOST = 'your_database_connection'
+DB_USER = 'database_username'
+DB_PASSWORD = 'pass@word'
+DB_PORT = 0000
+DB_DATABASE = 'db_name'
 
 connection = pymysql.connect(host=DB_HOST,
                              user=DB_USER,
@@ -80,7 +80,7 @@ def login_step(email_id, pass_word):
 
     
 #--------------login credentials---------------------
-login_step("bellavitasales1@gmail.com", "Tata123")
+login_step("your@email.com", "Pass@word")
 time.sleep(3)
 
 print('login done')
@@ -124,47 +124,3 @@ except:
         print("Option 3 executed")
 
 print('<--- report downloaded --->')
-'''
-#driver.close()     # close the driver
-
-#--------------------path to file downloaded folder
-
-download_path = r"C:\Trailytics\crawlers\Automation"
-path = download_path
-print('path :', path)
-lst = os.listdir(path)
-print('list of dir: ', lst)
-file = lst[0]   # getting the file name that is downloaded
-print(file)
-
-
-location = download_path        # DOWNLOAD FOLDER
-path = os.path.join(location, file)     # path for the downloaded file                  
-print('final path: ',path)
-df = pd.read_csv(path, index_col = False)        
-
-
-#------------------data transformation-----------------
-df['created_on'] = date.today()
-df['is_laatest'] = 1
-df.drop('BillingEmailID', axis = 1, inplace = True)
-df.fillna("", inplace = True)
-#print(len(df))
-
-# #---------------ingest data into the database
-# try:
-#     sql0 = "INSERT INTO idam.tb_wh_dtd_tatacliq (SellerName,SalesRefNo,OrderId,TransactionId,Ussid,SKU,ProductName,OrderType,CustomerId,Channel,OrderDate,P1SlaveId,Price,ShippingCharge,IsaGift,giftMessage,giftPrice,isAFreebie,ParentTransactionID,parentproductName,DeliveryMode,IsCOD,TransportMode,FulfillmentType,P1LogisticsID,P1LOGISTICNAME,ReturnLogisticsID,ShippingEmailID,ShippingFirstName,ShippingLastName,ShippingPhoneNo,ShippingAddress1,ShippingAddress2,ShippingAddress3,ShippingCountry,ShippingCity,ShippingState,ShippingPincode,BillingFirstName,BillingLastName,BillingPhoneNo,BillingAddress1,BillingAddress2,BillingAddress3,BillingCountry,BillingCity,BillingState,BillingPincode,PromotionCode,PromotionValue,ForwardAwbNumber,InvoiceNumber,ReverseAwbNumber,HSNCode,CreditNoteNo,SlaveGSTIN,InvoiceRefNo,Order_Hopping_Summary_Order_Allocate,Order_Hopping_Summary_Order_Reject,IMEI1,IMEI2,IMEI3,IMEI4,created_on,is_latest) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);"
-#     records = [tuple(r) for r in df.to_numpy()]
-#     print(records)
-#     cursor.executemany(sql0, records)
-#     connection.commit()        
-#     print('\n ---------data inserted successfully')
-                                                                                                                                                                                       
-# except Exception as err:
-#     print("Mysql Error occured: {}".format(str(err)))
-
-
-# os.remove(path)    # remove the file from the folder that is downloaded 
-# cursor.close()
-# connection.close()   # close the database connection
-'''
