@@ -38,11 +38,11 @@ chrome_options.add_experimental_option("prefs",prefs)
 
 
 #----------------connect to database--------------
-DB_HOST = 'database-1.cs7wneoxj0b8.us-east-1.rds.amazonaws.com'
-DB_USER = 'abdullah'
-DB_PASSWORD = 'Trailytics@789'
-DB_PORT = 3306
-DB_DATABASE = 'idam'
+DB_HOST = 'your_host_address'
+DB_USER = 'user_name'
+DB_PASSWORD = 'pass_word'
+DB_PORT = 0000
+DB_DATABASE = 'db_name'
 
 connection = pymysql.connect(host=DB_HOST,
                              user=DB_USER,
@@ -55,6 +55,7 @@ connection = pymysql.connect(host=DB_HOST,
 cursor = connection.cursor()
 
 
+# your chrome drive path  --> make sure you use same version of your browser
 driver = webdriver.Chrome(service=Service(r"C:\Trailytics\crawlers\chromedriver.exe"), options=chrome_options)
 driver.implicitly_wait(random.choice([4, 5, 6, 7]))
 driver.get("https://partner.bigbasket.com/partner/login/")
@@ -79,7 +80,7 @@ def login_step(email_id, pass_word):
     time.sleep(random.choice([3,4,5]))
 
 #--------------login credentials---------------------
-login_step("kruthikapv@eastern.in", "eastern123")
+login_step("your@email.in", "your_password")
 print('Login Success :) ')
 
 
