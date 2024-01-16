@@ -34,11 +34,11 @@ start_date = datetime(2024, 1, 4)
 end_date = datetime(2024, 1, 4)
 current_date = start_date
 
-DB_HOST = "database-1.cs7wneoxj0b8.us-east-1.rds.amazonaws.com"
+DB_HOST = "your_databas_connection"
 DB_USER = ""
 DB_PASSWORD = ""
 DB_DATABASE = ""
-DB_PORT = 3306
+DB_PORT = 0000
 
 download_path = r"C:\download_data"
 chromeOptions = webdriver.ChromeOptions()
@@ -97,7 +97,7 @@ def login_step(email_id, pass_word):
 
     # ----------------- Enter OTP-------------------
 
-    ots07_pidilite = "3WW3PFN76NA3FTQ6ZYTAQ4XZ3NJJEMNURPVFKNT63NNNQQTLF6MQ"
+    ots07_pidilite = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
     totp = pyotp.TOTP(ots07_pidilite)
     curr_otp = str(totp.now())
     print('OTP is : ', curr_otp)
@@ -108,7 +108,7 @@ def login_step(email_id, pass_word):
 
 
 # ----------------- select the account ---------------
-login_step("OTS1407@pidilite.com", "trailytics@123")
+login_step("your@email.com", "pass@word")
 handle_captcha()
 time.sleep(3)
 
@@ -131,7 +131,7 @@ try:
 except:
     driver.get("https://www.vendorcentral.in/")
     time.sleep(random.choice([4, 5, 6, 7]))
-    login_step("OTS1407@pidlite.com", "trailytics@123")
+    login_step("your@email.com", "pass@word")
     handle_captcha()
     time.sleep(3)
     driver.find_element(By.ID, 'vc-navigation-tab-reports').click()
