@@ -36,11 +36,11 @@ prefs = {"download.default_directory": download_path}
 chrome_options.add_experimental_option("prefs",prefs)
 
 #----------------connect to database--------------
-DB_HOST = 'database-1.cs7wneoxj0b8.us-east-1.rds.amazonaws.com'
-DB_USER = 'abdullah'
-DB_PASSWORD = 'Trailytics@789'
-DB_PORT = 3306
-DB_DATABASE = 'idam'
+DB_HOST = 'your_database_connection'
+DB_USER = 'db_username'
+DB_PASSWORD = 'pass@word'
+DB_PORT = 0000
+DB_DATABASE = 'db_name'
 
 connection = pymysql.connect(host=DB_HOST,
                              user=DB_USER,
